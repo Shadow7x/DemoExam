@@ -1,0 +1,36 @@
+{%extends "web/layout.html"%}
+
+{%block body%}
+<div class="container w-30">
+    <form action="{%url 'register'%}" method = "POST">
+        {%csrf_token%}
+        <div class="mb-3">
+
+            <label  class="form-label">Имя</label>
+            <input required name='name' class="form-control" >
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Почта</label>
+            <input required type="email" name='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Пороль</label>
+            <input required type="password" name='password' class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Проверка пороля</label>
+            <input required type="password" name='password2' class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+            <label class="form-check-label" for="exampleCheck1">Согласие с правилами регистрации</label>
+        </div>
+        {%if error%}
+        <p class="text">{{error}}</p>
+        {%endif%}
+        <button type="submit" class="btn btn-primary">Зарегестрироться</button>
+    </form>
+</div>
+{%endblock%}

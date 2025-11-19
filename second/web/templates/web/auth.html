@@ -1,0 +1,25 @@
+{%extends "web/layout.html"%}
+
+{%block body%}
+
+<div class="container w-30">
+    <form action="{%url 'auth'%}" method = "POST">
+        {%csrf_token%}
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Почта</label>
+            <input required type="email" name='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Пороль</label>
+            <input required type="password" name='password' class="form-control" id="exampleInputPassword1">
+        </div>
+        {%if error%}
+        <p class="text">{{error}}</p>
+        {%endif%}
+        <button type="submit" class="btn btn-primary">Войти</button>
+    </form>
+</div>
+
+{%endblock%}

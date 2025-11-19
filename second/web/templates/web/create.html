@@ -1,0 +1,34 @@
+{%extends "web/layout.html"%}
+
+{%block body%}
+<div class="container w-30">
+    <form action="{%url 'create'%}" method = "POST">
+        {%csrf_token%}
+        <div class="mb-3">
+
+            <label  class="form-label">название букета</label>
+            <input required name='name' class="form-control" >
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">количесто</label>
+            <input required  name='count' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">телефон</label>
+            <input required  name='phone' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">адрес</label>
+            <input required  name='address' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+        </div>
+        {%if error%}
+        <p class="text">{{error}}</p>
+        {%endif%}
+        <button type="submit" class="btn btn-primary">Создать</button>
+    </form>
+</div>
+{%endblock%}
