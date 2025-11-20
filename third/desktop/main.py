@@ -1,5 +1,5 @@
 from PySide6.QtCore import QSize, Qt
-from PySide6.QtWidgets import QMainWindow, QMessageBox, QTabWidget, QWidget, QFrame, QDialog, QFileDialog
+from PySide6.QtWidgets import QMainWindow, QMessageBox, QTabWidget, QWidget, QFrame, QDialog, QFileDialog,QButtonGroup
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import QDate
 from .pages.MainWindow import Ui_MainWindow
@@ -88,9 +88,10 @@ class ProductFrame(QFrame):
         self.main.initialize()
 
     def deleteProduct(self):
-        self.product.delete()
-        
-        self.main.initialize()
+        if QMessageBox.Yes == QMessageBox.question(self,"Удаление", "Вы уверены в этом ?"):
+            self.product.delete()
+            
+            self.main.initialize()
         
 class OrderFrame(QFrame):
     def __init__(self,order: NewOrder, parent:"OrdersWindow", user: User| None) -> None:
@@ -122,9 +123,10 @@ class OrderFrame(QFrame):
         self.main.initialize()
 
     def deleteOrder(self):
-        self.order.delete()
-        
-        self.main.initialize()
+        if QMessageBox.Yes == QMessageBox.question(self,"Удаление", "Вы уверены в этом ?"):
+            self.order.delete()
+            
+            self.main.initialize()
         
 
 class HomeWindow(QMainWindow):
