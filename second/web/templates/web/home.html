@@ -23,6 +23,21 @@
         </div>
         {%endfor%}
     </div>
+    <div class="card-group">
+        {%for j in orders%}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">номер заказа{{j.id}}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">имя букета{{j.name_order}}</h6>
+                <p class="card-text">количесвто {{j.count_order}}</p>
+                <p class="card-text">телефон{{j.phone_order}}</p>
+                <p class="card-text"> адресс{{j.address_order}}</p>
+                <p class="card-text">{{j.created_at}}</p>
+
+            </div>
+        </div>
+        {%endfor%}
+    </div>
     <a href="{%url 'create'%}"><button type="button" class="btn btn-primary">Создать</button></a>
 </div>
 </div>

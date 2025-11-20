@@ -1,5 +1,5 @@
-@echo off
-
+@Echo off
 call .venv\Scripts\activate.bat
-cd second
+
+cd third
 py manage.py runqt

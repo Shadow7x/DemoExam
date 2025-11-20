@@ -1,0 +1,49 @@
+{%extends "web/layout.html"%}
+
+{%block content%}
+    <div class="container">
+        <form action = "{%url 'home'%}" method = "post">
+            {%csrf_token%}
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Название букета</label>
+                <input required name ='name' type="name" class="form-control">
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Количесвто</label>
+                <input required name ='count' type="name" class="form-control">
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">тефлефон</label>
+                <input required name ='phone' type="name" class="form-control">
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">адрес лоставки</label>
+                <input required name ='address' type="name" class="form-control">
+                
+            </div>
+            
+
+            {%if error%}
+            <p class="text-start">{{error}}</p>
+            {%endif%}
+            <button type="submit" class="btn btn-primary">Создать</button>
+        </form>
+        {%for i in orders%}
+        <div class="card" style="width: 18rem; margin-top: 10px;">
+            <div class="card-body">
+                <h5 class="card-title">{{i.id}}</h5>
+                <p class="card-text">{{i.name_order}}</p>
+                <p class="card-text">{{i.count_order}}</p>
+                <p class="card-text">{{i.phone_order}}</p>
+                <p class="card-text">{{i.address_order}}</p>
+                <p class="card-text">{{i.created_at}}</p>
+
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+{%endblock%}
