@@ -15,15 +15,16 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QMainWindow,
-    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QHBoxLayout,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QScrollArea, QSizePolicy, QSpacerItem, QVBoxLayout,
+    QWidget)
 
 class Ui_ProductWindow(object):
     def setupUi(self, ProductWindow):
         if not ProductWindow.objectName():
             ProductWindow.setObjectName(u"ProductWindow")
-        ProductWindow.resize(800, 600)
+        ProductWindow.resize(862, 600)
         font = QFont()
         font.setFamilies([u"Times New Roman"])
         font.setPointSize(14)
@@ -35,17 +36,23 @@ class Ui_ProductWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.FIO = QLabel(self.centralwidget)
+        self.FIO.setObjectName(u"FIO")
+        self.FIO.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.FIO, 0, 2, 1, 1)
+
         self.scrollArea = QScrollArea(self.centralwidget)
         self.scrollArea.setObjectName(u"scrollArea")
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 697, 553))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 690, 518))
         self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
-        self.gridLayout.addWidget(self.scrollArea, 1, 2, 1, 1)
+        self.gridLayout.addWidget(self.scrollArea, 2, 2, 1, 1)
 
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -54,18 +61,57 @@ class Ui_ProductWindow(object):
 
         self.verticalLayout.addWidget(self.Exit)
 
+        self.CreateProduct = QPushButton(self.centralwidget)
+        self.CreateProduct.setObjectName(u"CreateProduct")
+
+        self.verticalLayout.addWidget(self.CreateProduct)
+
+        self.OpenOrders = QPushButton(self.centralwidget)
+        self.OpenOrders.setObjectName(u"OpenOrders")
+
+        self.verticalLayout.addWidget(self.OpenOrders)
+
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer)
 
 
-        self.gridLayout.addLayout(self.verticalLayout, 1, 0, 1, 1)
+        self.gridLayout.addLayout(self.verticalLayout, 2, 0, 1, 1)
 
-        self.FIO = QLabel(self.centralwidget)
-        self.FIO.setObjectName(u"FIO")
-        self.FIO.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.label = QLabel(self.centralwidget)
+        self.label.setObjectName(u"label")
 
-        self.gridLayout.addWidget(self.FIO, 0, 2, 1, 1)
+        self.horizontalLayout.addWidget(self.label)
+
+        self.Search = QLineEdit(self.centralwidget)
+        self.Search.setObjectName(u"Search")
+
+        self.horizontalLayout.addWidget(self.Search)
+
+        self.label_2 = QLabel(self.centralwidget)
+        self.label_2.setObjectName(u"label_2")
+
+        self.horizontalLayout.addWidget(self.label_2)
+
+        self.comboBoxSort = QComboBox(self.centralwidget)
+        self.comboBoxSort.setObjectName(u"comboBoxSort")
+
+        self.horizontalLayout.addWidget(self.comboBoxSort)
+
+        self.label_3 = QLabel(self.centralwidget)
+        self.label_3.setObjectName(u"label_3")
+
+        self.horizontalLayout.addWidget(self.label_3)
+
+        self.comboBoxFilter = QComboBox(self.centralwidget)
+        self.comboBoxFilter.setObjectName(u"comboBoxFilter")
+
+        self.horizontalLayout.addWidget(self.comboBoxFilter)
+
+
+        self.gridLayout.addLayout(self.horizontalLayout, 1, 2, 1, 1)
 
         ProductWindow.setCentralWidget(self.centralwidget)
 
@@ -76,7 +122,12 @@ class Ui_ProductWindow(object):
 
     def retranslateUi(self, ProductWindow):
         ProductWindow.setWindowTitle(QCoreApplication.translate("ProductWindow", u"\u041f\u0440\u043e\u0434\u0443\u043a\u0442\u044b", None))
-        self.Exit.setText(QCoreApplication.translate("ProductWindow", u"\u0412\u044b\u0439\u0442\u0438", None))
         self.FIO.setText("")
+        self.Exit.setText(QCoreApplication.translate("ProductWindow", u"\u0412\u044b\u0439\u0442\u0438", None))
+        self.CreateProduct.setText(QCoreApplication.translate("ProductWindow", u"\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u043f\u0440\u043e\u0434\u0443\u043a\u0442", None))
+        self.OpenOrders.setText(QCoreApplication.translate("ProductWindow", u"\u0417\u0430\u043a\u0430\u0437\u044b", None))
+        self.label.setText(QCoreApplication.translate("ProductWindow", u"\u041d\u0430\u0439\u0442\u0438:", None))
+        self.label_2.setText(QCoreApplication.translate("ProductWindow", u"\u041e\u0442\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.label_3.setText(QCoreApplication.translate("ProductWindow", u"\u041e\u0442\u0444\u0438\u043b\u044c\u0442\u0440\u043e\u0432\u0430\u0442\u044c \u043f\u043e", None))
     # retranslateUi
 

@@ -36,8 +36,8 @@ class OrderLocation(models.Model):
 
 class OrderDetails(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    order = models.ForeignKey("Order", on_delete=models.CASCADE)
-    count = models.IntegerField()
+    order = models.ForeignKey("Order", on_delete=models.CASCADE )
+    count = models.IntegerField(default=1)
 
 class Order(models.Model):
     num = models.IntegerField()

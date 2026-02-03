@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>HomeWindow</class>
- <widget class="QMainWindow" name="HomeWindow">
+ <class>OrderWindow</class>
+ <widget class="QMainWindow" name="OrderWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>846</width>
+    <width>865</width>
     <height>600</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Продукты</string>
+   <string>Заказы</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -25,7 +25,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="0">
+    <item row="1" column="0">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QPushButton" name="Exit">
@@ -35,9 +35,16 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="CreateProduct">
+       <widget class="QPushButton" name="AddOrder">
         <property name="text">
-         <string>Добавить товар</string>
+         <string>Добавить заказ</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Products">
+        <property name="text">
+         <string>Продукты</string>
         </property>
        </widget>
       </item>
@@ -59,7 +66,7 @@
     <item row="0" column="1">
      <widget class="QLabel" name="FIO">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -67,40 +74,6 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Поиск</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Search"/>
-      </item>
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Отсортирвоать</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="comboBoxSort"/>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>Отфильтровать по</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="comboBoxFilter"/>
-      </item>
-     </layout>
-    </item>
-    <item row="2" column="1">
      <widget class="QScrollArea" name="scrollArea">
       <property name="widgetResizable">
        <bool>true</bool>
@@ -110,8 +83,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>683</width>
-         <height>518</height>
+         <width>706</width>
+         <height>552</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2"/>
