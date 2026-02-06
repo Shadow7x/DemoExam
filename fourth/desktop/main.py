@@ -12,6 +12,7 @@ from .pages.FrameOrderCount import Ui_FrameOrderCount
 from .models import *
 from django.db.models import Q
 from django.core.files import File
+import uuid
 import os
 
 
@@ -225,7 +226,7 @@ class OrderFrame(QFrame):
         ui.Delete.clicked.connect(self.delete_product)
     
     def update_product(self):
-        dialog = OrderDialog(self.order)
+        dialog = OrderDialog(self.parents.user,self.order)
         dialog.exec()
         self.parents.initialize()
 
@@ -277,7 +278,7 @@ class OrderWindow(QMainWindow):
             ui.scrollAreaWidgetContents.layout().addWidget(frame)
         
     def create_order(self):
-        dialog = OrderDialog()
+        dialog = OrderDialog(self.user)
         dialog.exec()
         self.initialize()
         
@@ -452,12 +453,14 @@ class CustomLabel(QLabel):
 
         
 class OrderDialog(QDialog):
-    def __init__(self, order : Order | None = None) -> None:
+    def __init__(self, user : User , order : Order | None = None ) -> None:
         super(OrderDialog,self).__init__()
         
         self.ui = Ui_OrderDialog()
         ui = self.ui
         ui.setupUi(self)
+        
+        self.user = user
         
         
         ui.comboBoxStatus.addItems(["Готов", "Не готов"])
@@ -534,9 +537,12 @@ class OrderDialog(QDialog):
             else:
                 o = Order()
                 o.status = status
+                o.num = Order.objects.last().num + 1 if Order.objects.last() else 1
                 o.location = OrderLocation.objects.filter(address = address).first()
                 o.date = date
                 o.dateDelivery = dateDelivery
+                o.user = self.user
+                o.code = Order.objects.last().code + 1 if Order.objects.last() else 1
                 
                 
                 o.save_base()
