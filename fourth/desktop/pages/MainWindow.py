@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
         font.setPointSize(14)
         MainWindow.setFont(font)
         icon = QIcon()
-        icon.addFile(u"../../../../../../../time/import/Icon.JPG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"./Icon.JPG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -93,7 +93,7 @@ class Ui_MainWindow(object):
         self.label_4.setMinimumSize(QSize(100, 100))
         self.label_4.setMaximumSize(QSize(100, 100))
         self.label_4.setBaseSize(QSize(100, 100))
-        self.label_4.setPixmap(QPixmap(u"../../../../../../../time/import/Icon.png"))
+        self.label_4.setPixmap(QPixmap(u"./Icon.png"))
         self.label_4.setScaledContents(True)
 
         self.gridLayout.addWidget(self.label_4, 0, 0, 1, 1)

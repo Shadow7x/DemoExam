@@ -38,7 +38,7 @@ class Ui_Product(object):
         self.Image.setMinimumSize(QSize(150, 150))
         self.Image.setMaximumSize(QSize(150, 150))
         self.Image.setBaseSize(QSize(150, 150))
-        self.Image.setPixmap(QPixmap(u"../../../../../../../time/import/picture.png"))
+        self.Image.setPixmap(QPixmap(u"./picture.png"))
         self.Image.setScaledContents(True)
 
         self.horizontalLayout_2.addWidget(self.Image)

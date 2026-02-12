@@ -29,7 +29,7 @@ class Ui_ProductDialog(object):
         font.setPointSize(14)
         ProductDialog.setFont(font)
         icon = QIcon()
-        icon.addFile(u"../../../../../../../time/import/Icon.JPG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"./Icon.JPG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         ProductDialog.setWindowIcon(icon)
         self.gridLayout = QGridLayout(ProductDialog)
         self.gridLayout.setObjectName(u"gridLayout")
@@ -48,7 +48,7 @@ class Ui_ProductDialog(object):
         self.Image.setMinimumSize(QSize(150, 150))
         self.Image.setMaximumSize(QSize(150, 150))
         self.Image.setBaseSize(QSize(150, 150))
-        self.Image.setPixmap(QPixmap(u"../../../../../../../time/import/picture.png"))
+        self.Image.setPixmap(QPixmap(u"./picture.png"))
         self.Image.setScaledContents(True)
 
         self.gridLayout.addWidget(self.Image, 1, 1, 1, 1)

@@ -30,7 +30,7 @@ class Ui_ProductWindow(object):
         font.setPointSize(14)
         ProductWindow.setFont(font)
         icon = QIcon()
-        icon.addFile(u"../../../../../../../time/import/Icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"./Icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         ProductWindow.setWindowIcon(icon)
         self.centralwidget = QWidget(ProductWindow)
         self.centralwidget.setObjectName(u"centralwidget")

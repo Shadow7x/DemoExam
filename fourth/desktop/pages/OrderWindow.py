@@ -29,7 +29,7 @@ class Ui_OrderWindow(object):
         font.setPointSize(14)
         OrderWindow.setFont(font)
         icon = QIcon()
-        icon.addFile(u"../../../../../../../time/import/Icon.JPG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"./Icon.JPG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         OrderWindow.setWindowIcon(icon)
         self.centralwidget = QWidget(OrderWindow)
         self.centralwidget.setObjectName(u"centralwidget")
