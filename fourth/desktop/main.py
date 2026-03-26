@@ -12,7 +12,7 @@ from .pages.FrameOrderCount import Ui_FrameOrderCount
 from .models import *
 from django.db.models import Q
 from django.core.files import File
-import uuid
+
 import os
 
 
