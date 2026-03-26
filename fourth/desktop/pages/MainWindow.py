@@ -93,7 +93,7 @@ class Ui_MainWindow(object):
         self.label_4.setMinimumSize(QSize(100, 100))
         self.label_4.setMaximumSize(QSize(100, 100))
         self.label_4.setBaseSize(QSize(100, 100))
-        self.label_4.setPixmap(QPixmap(u"../../../../../../../time/import/Icon.png"))
+        self.label_4.setPixmap(QPixmap(u"./Icon.png"))
         self.label_4.setScaledContents(True)
 
         self.gridLayout.addWidget(self.label_4, 0, 0, 1, 1)

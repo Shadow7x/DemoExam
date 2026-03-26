@@ -29,7 +29,7 @@ class Ui_OrderDialog(object):
         font.setPointSize(14)
         OrderDialog.setFont(font)
         icon = QIcon()
-        icon.addFile(u"../../../../../../../time/import/Icon.JPG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"./Icon.JPG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         OrderDialog.setWindowIcon(icon)
         self.gridLayout = QGridLayout(OrderDialog)
         self.gridLayout.setObjectName(u"gridLayout")
