@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <form class="container-fluid justify-content-end">
+            {%if not user%}
+            <a href="{%url 'auth'%}"><button class="btn btn-outline-success me-2" type="button">Авторизация</button></a>
+            <a href="{%url 'register'%}"><button class="btn btn-outline-success me-2" type="button">Регистрация</button></a>
+            {%else%}
+            <a href="{%url 'logout'%}"><button class="btn btn-outline-success me-2" type="button">Выход</button></a>
+            {%endif%}
+        </form>
+    </nav>
+    <div class="main">
+    {%block content%}{%endblock%}
+    </div>
+    <script rel = "../static/js/bootstrap.min.js"></script>
+</body>
+</html>

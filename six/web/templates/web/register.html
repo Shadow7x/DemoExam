@@ -1,0 +1,36 @@
+{%extends "web/layout.html"%}
+{%block title%}Регистрация{%endblock%}
+
+{%block content%}
+
+  <form method="POST" action = "{%url 'register'%}">
+    {%csrf_token%}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">name</label>
+    <input required name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    
+   <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label" >Email </label>
+    <input required name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    
+   <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label " required>Password</label>
+    <input required name="password" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    
+  </div>
+   <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label" required>Password_repeat</label>
+    <input required  name="password2" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+    <label class="form-check-label" for="exampleCheck1">согласие с правилами регистрации</label>
+  </div>
+  {%if error%}
+  <p class="card-text">Ошибка: {{error}}</p>
+  {%endif%}
+  <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+</form>
+
+{%endblock%}

@@ -1,0 +1,13 @@
+@font-face {
+    font-family: main;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+body{
+    font-family: main;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

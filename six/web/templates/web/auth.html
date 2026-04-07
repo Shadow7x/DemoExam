@@ -1,0 +1,23 @@
+{%extends "web/layout.html"%}
+{%block title%}Авторизация{%endblock%}
+
+{%block content%}
+
+  <form method="POST" action = "{%url 'auth'%}">
+    {%csrf_token%}
+  
+   <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label" >Email </label>
+    <input required name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    
+   <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label " required>Password</label>
+    <input required name="password" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+ 
+  {%if error%}
+  <p class="card-text">Ошибка: {{error}}</p>
+  {%endif%}
+  <button type="submit" class="btn btn-primary">Войти</button>
+</form>
+
+{%endblock%}

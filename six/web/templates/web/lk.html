@@ -1,0 +1,54 @@
+{%extends "web/layout.html"%}
+{%block title%}Авторизация{%endblock%}
+
+{%block content%}
+
+  <form method="POST" action = "{%url 'lk'%}">
+    {%csrf_token%}
+  
+   <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Название продукта</label>
+      <input required name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+   <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label" >количество </label>
+      <input required name="count"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+   <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label " required>телефон</label>
+      <input required name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label " required>Адрес доставки.
+</label>
+      <input required name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+  
+  
+ 
+  {%if error%}
+  <p class="card-text">Ошибка: {{error}}</p>
+  {%endif%}
+  <button type="submit" class="btn btn-primary">Создать
+  </button>
+</form>
+</div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {%for i in order%}
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{i.name_order}}</h5>
+        <p class="card-text">{{i.count_order}}</p>
+        <p class="card-text">{{i.phone_order}}</p>
+        <p class="card-text">{{i.address_order}}</p>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+  
+</div>
+
+{%endblock%}
